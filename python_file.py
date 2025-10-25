@@ -91,8 +91,8 @@ def show_inbox():
     else:
         print(f"{GREEN}Your inbox is empty.{GRAY}")
 
-# Analyze the received data
-def analyze_data(data):
+# Analyse the received data
+def analyse_data(data):
     speed_values = data['speed']
     temperature_values = data['temp']
 
@@ -151,9 +151,9 @@ def plot_bar_chart(data):
     plt.grid(True)
     plt.show()
 
-# Plot and analyze the data
-def analyze_and_plot(data):
-    analysis_results = analyze_data(data)
+# Plot and analyse the data
+def analyse_and_plot(data):
+    analysis_results = analyse_data(data)
     print(f"{GREEN}Analysis Results:{GRAY}", analysis_results)
 
     plot_speed_over_time(data)
@@ -170,8 +170,8 @@ def main():
             # Allow the user to view their inbox
             show_inbox()
 
-            # Analyze and plot data periodically (or based on user input)
-            analyze_and_plot(example_data)  # Example data can be replaced with real-time data from `msg_dict`
+            # Analyse and plot data periodically (or based on user input)
+            analyse_and_plot(example_data)  # Example data can be replaced with real-time data from `msg_dict`
 
             # Ask the user for a command to either exit or continue
             user_input = input(f"{GREEN}Type 'exit' to quit or press Enter to continue: {GRAY}")

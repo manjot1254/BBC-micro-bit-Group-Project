@@ -1,6 +1,6 @@
 from microbit import *
 
-#microbit radio
+# Microbit radio
 import radio
 from bme688 import *
 from OLED import *
@@ -16,7 +16,7 @@ class all_data:
         self.meter = 0.0
         self.light_level = ''
 
-data=all_data()
+data = all_data()
 
 # Configure the radio
 radio.config(channel=10, group=9)
@@ -25,7 +25,7 @@ radio.on()
 # Initlises UART with the default settings
 uart.init(baudrate=115200)
 
-#Microbit IDs
+# Microbit IDs
 personal_id = "mll22rma"
 receiver_id = "nnvv5463"
 
@@ -58,18 +58,6 @@ while True:
     show("Meter: {}".format(data.meter),6)
     show("Speed: {}".format(data.meter/run_time)+" m/s",7)
 
-    # msg_dict.update({
-    #     'temp': temp,
-    #     'humidity': humidity,
-    #     'run_time': run_time,
-    #     'light_level': data.light_level,
-    #     'steps': data.steps,
-    #     'meters': data.meter,
-    #     'speed': data.steps,
-    # })
-
-    # this is the data from the
-    
     # Send a message when button B is pressed
     if button_b.was_pressed():
         radio.send(str({'sender_id': personal_id}))
@@ -81,6 +69,6 @@ while True:
         radio.send(str({'steps': data.steps}))
         radio.send(str({'meters': data.meter}))
         radio.send(str({'speed': data.meter/run_time,}))
-             #we don't know the values we're sending across yet but they sjust need to be added in a similar fashion to this
+             # Values unknown but can be formatted similarly
 
     sleep(500)

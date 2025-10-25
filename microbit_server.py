@@ -1,7 +1,6 @@
-# Write your code here :-)
 from microbit import *
 
-#microbit radio
+# Microbit radio
 import radio
 
 # Configure the radio
@@ -11,7 +10,7 @@ radio.on()
 # Initlises UART with the default settings
 uart.init(baudrate=115200)
 
-#Microbit ID
+# Microbit ID
 personal_id = 'nnvv5462'
 
 while True:
